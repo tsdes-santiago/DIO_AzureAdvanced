@@ -22,7 +22,7 @@ Após a execução deletei os todos os nós para não gerar cobrança adicional 
 1. Acesse o serviço VPC (nuvem privada virtual) e crie uma nova VPC
 
 <p align=center>
-<img src="criar_vpc.png">
+<img src="images/criar_vpc.png">
 </p>
 
 2. Configurando a sub-rede
@@ -30,7 +30,7 @@ Após a execução deletei os todos os nós para não gerar cobrança adicional 
 - Crie uma sub-rede com ID da VPC docker-cluster (criada no passo 1)
 
 <p align=center>
-<img src="criar_subrede.png">
+<img src="images/criar_subrede.png">
 </p>
 
 3. Gateway de internet
@@ -38,13 +38,13 @@ Após a execução deletei os todos os nós para não gerar cobrança adicional 
 - Criar um gateway de internet
 
 <p align=center>
-<img src="criar_gateway.png">
+<img src="images/criar_gateway.png">
 </p>
 
 - Associar a uma vpc - escolher docker-cluster
 
 <p align=center>
-<img src="associar_gateway.png">
+<img src="images/associar_gateway.png">
 </p>
 
 
@@ -55,7 +55,7 @@ Após a execução deletei os todos os nós para não gerar cobrança adicional 
 - Editar rotas, adicionar rota de todos para gateway
 
 <p align=center>
-<img src="adicionar_rota.png">
+<img src="images/adicionar_rota.png">
 </p>
 
 
@@ -117,13 +117,13 @@ Assim subimos a máquina virtual com o docker já instalado. O script está disp
 Após essas configurações, executar instância
 
 <p align=center>
-<img src="exec_instancias.png">
+<img src="images/exec_instancias.png">
 </p>
 
 Podemos ver as instâncias (nós) e seus IPs públicos para acessar com SSH
 
 <p align=center>
-<img src="instancias.png">
+<img src="images/instancias.png">
 </p>
 
 ## Iniciando um Cluster Swarm 
@@ -167,7 +167,7 @@ root@aws1:/home/ubuntu#
 Note que foi solicitada a porta 2377, devemos editar as regras de entrada na aws para liberar essa porta e conectar os demais clusters.
 
 <p align=center>
-<img src="regra_entrada.png">
+<img src="images/regra_entrada.png">
 </p>
 
 ## Adicionando demais nós ao cluster swarm 
@@ -219,13 +219,13 @@ q21vhmfo83zz   web-server   replicated   15/15      httpd:latest   *:80->80/tcp
 Note que está usando a porta 80, devemos liberar essa porta no grupo de segurança na AWS.
 
 <p align=center>
-<img src="regra_entrada2.png">
+<img src="images/regra_entrada2.png">
 </p>
 
 - Podemos ver o servidor ativo após liberar a porta
 
 <p align=center>
-<img src="server_on.png">
+<img src="images/server_on.png">
 </p>
 
 - Checando a distribuição das réplicas nos nós
@@ -345,7 +345,7 @@ vootacl2hmb8   meu-app.15   httpd:latest   aws2      Running         Running 7 s
 ```
 
 <p align=center>
-<img src="server_on_volume.png">
+<img src="images/server_on_volume.png">
 </p>
 
 ### Replicando os dados nos demais nós
@@ -386,7 +386,7 @@ vootacl2hmb8   meu-app.15   httpd:latest   aws2      Running         Running 7 s
 - Liberando o serviço nfs e Todos os UDPs nas regras de entrada
 
 <p align=center>
-<img src="regra_entrada3.png">
+<img src="images/regra_entrada3.png">
 </p>
 
 - Nos demais nós
@@ -465,7 +465,7 @@ Status: Downloaded newer image for mysql:5.7
 - Liberando a porta 3306 para o SQL em regras de entrada na AWS
 
 <p align=center>
-<img src="regra_entrada4.png">
+<img src="images/regra_entrada4.png">
 </p>
 
 - Conectei ao banco de dados `meubanco`com o DBeaver e criei uma tabela
@@ -511,13 +511,13 @@ root@aws1:/var/lib/docker/volumes/app/_data# docker service create --name meu-ap
 - Podemos ver que está rodando no navegador
 
 <p align=center>
-<img src="php_service.png">
+<img src="images/php_service.png">
 </p>
 
 - Dados foram inseridos no banco de dados
 
 <p align=center>
-<img src="DBeaver.png">
+<img src="images/DBeaver.png">
 </p>
 
 ### Proxy com NGINX
@@ -599,7 +599,7 @@ root@aws1:/proxy# docker run --name my-proxy-app -dti -p 4500:4500 proxy-app
 - Liberando a porta 4500 nas regras de entrada da AWS
 
 <p align=center>
-<img src="regra_entrada5.png">
+<img src="images/regra_entrada5.png">
 </p>
 
 
@@ -609,12 +609,12 @@ Executei o teste de stress no [loader.io](https://loader.io/) utilizando o arqui
 index.php que insere dados no banco de dados
 
 <p align=center>
-<img src="loader.png">
+<img src="images/loader.png">
 </p>
 
 
 - Podemos ver pelo hostname do dados inseridos que o load balance está funcionando e as solicitações são distribuídas nas réplicas dos containers
 
 <p align=center>
-<img src="balance.png">
+<img src="images/balance.png">
 </p>
