@@ -1,0 +1,7 @@
+services:
+  webapp:
+    build: .
+    ports:
+      - "80:80"
+    volumes:
+      - ../pages:/pages

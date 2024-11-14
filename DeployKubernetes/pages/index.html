@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Tiago Santiago</title>
+     <!-- CSS -->
+     <link rel="stylesheet" href="./assets/styles/main.css">
+       <!-- Bootstrap icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- devicon.dev icons -->
+    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+</head>
+
+<body>
+
+    <div class="container">
+    <header>
+    <div class="header__img">
+        <img src="./assets/images/tiago.png" alt="Tiago Santiago">
+    </div>
+    <div class="header__info">
+        <h1>Olá, eu sou o <br>Tiago Santiago</h1>
+        <p> <i class="devicon-pytorch-original"></i>
+          Machine learning Specialist</p>
+        <p> <i class="bi bi-laptop"></i> 
+            Backend Python Developer</p>
+        <p> <i class="bi bi-envelope"></i> 
+            <a href="mailto:tiagosantiag@gmail">tiagosantiag@gmail</a>
+        </p>    
+    </div>
+    </header>
+
+    <section class="section__toggle" onclick="toggleSkills(this)">
+        <div class="section__title">
+        <h2>Habilidade Profissionais</h2>
+        <i class="bi bi-chevron-compact-down"></i>
+        </div>
+        <div class="section__content">
+            <ul class="skills__list">
+              <!-- Added by JS -->       
+            </ul>
+        </div>  
+    </section>
+
+    <section class="section__toggle" onclick="toggleSkills(this)">
+        <div class="section__title">
+            <h2>Idiomas</h2>
+            <i class="bi bi-chevron-compact-down"></i>
+        </div>
+        <div class="section__content">
+            <span><i class="bi bi-check"></i>
+                Português
+            </span>
+            <span><i class="bi bi-check"></i>
+                Inglês
+            </span>
+        </div>
+    </section>
+    <section class="section__toggle" onclick="toggleSkills(this)">
+        <div class="section__title">
+        <h2>Formação</h2>
+        <i class="bi bi-chevron-compact-down"></i>
+        </div>
+        <div class="section__content">
+            <div class="education__item">
+                <span><i class="bi bi-laptop"></i>
+                DIO - <a href="https://www.dio.me/users/tiagosantiag" target="_blank">Diversos cursos</a>
+                </span> 
+                <span><i class="bi bi-mortarboard"></i>
+                    IFSC-USP - Doutor em Física
+                </span>
+                <span><i class="bi bi-mortarboard"></i>
+                    UFSCAR - Bacharel em Eng. Física
+                </span>
+                
+            </div>
+        </div>
+    </div>   
+    
+    <script src="./assets/scripts/main.js" defer></script>
+</body>
+
+</html>
