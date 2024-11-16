@@ -8,7 +8,7 @@
 
 Nesse desafio vamos configurar um logic app na azure com um request http para enviar dados (post) seguindo um template json. Utilizando o link fornecido pelo http request realizamos a operação de post utilizando o postman.
 
-## :buld: Solução do desafio
+## :bulb: Solução do desafio
 
 Criando um workspace do log analytics:
 
